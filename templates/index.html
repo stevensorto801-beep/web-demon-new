@@ -16,22 +16,22 @@
     </header>
 
     <section class="max-w-6xl mx-auto px-6 py-24 text-center">
-        <span class="inline-block bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs px-3 py-1 rounded-full mb-6 font-medium">Ingeniería y Desarrollo de Software</span>
-        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">Creamos sistemas y páginas web de <span class="text-blue-500">alto rendimiento</span></h1>
-        <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">Soluciones web a la medida, paneles administrativos y sitios optimizados para escalar tu negocio al siguiente nivel.</p>
-        <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">Solicitar Proyecto</a>
+        <span class="inline-block bg-blue-500/10 text-blue-400 border border-blue-500/20 text-xs px-3 py-1 rounded-full mb-6 font-medium">Creamos sistemas y páginas web de calidad</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">Soluciones web a la medida, paneles administrativos y sitios optimizados</h1>
+        <p class="text-slate-400 text-lg max-w-2xl mx-auto mb-10">Desarrollamos soluciones digitales eficientes y escalables para llevar tu negocio o proyecto al siguiente nivel.</p>
+        <a href="#contacto" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-xl shadow-lg transition">Hablar con un experto</a>
     </section>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-            <div class="max-w-md mx-auto px-6 mb-8">
-                {% for category, message in messages %}
-                    <div class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-4 rounded-xl text-center text-sm">
-                        {{ message }}
-                    </div>
-                {% endfor %}
+      {% if messages %}
+        <div class="max-w-md mx-auto px-6 mb-8">
+          {% for category, message in messages %}
+            <div class="bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 p-4 rounded-xl text-center text-sm">
+              {{ message }}
             </div>
-        {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
     {% endwith %}
 
     <section id="contacto" class="max-w-xl mx-auto px-6 py-16">
@@ -39,20 +39,20 @@
             <h2 class="text-2xl font-bold mb-2">Hablemos de tu proyecto</h2>
             <p class="text-slate-400 text-sm mb-6">Completa el formulario y te responderemos con una propuesta técnica.</p>
             
-           <form id="contact-form" class="space-y-4"></form>
+            <form id="contact-form" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Tu Nombre</label>
-                    <input type="text" name="nombre" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-blue-500 transition">
+                    <input type="text" name="from_name" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-blue-500">
                 </div>
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Correo Electrónico</label>
-                    <input type="email" name="email" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-blue-500 transition">
+                    <input type="email" name="reply_to" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-blue-500">
                 </div>
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Mensaje o Requerimientos</label>
-                    <textarea name="mensaje" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-blue-500 transition"></textarea>
+                    <textarea name="message" rows="4" required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-3 text-slate-100 focus:outline-none focus:border-blue-500"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition shadow">Enviar Mensaje</button>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 rounded-lg transition shadow-lg">Enviar Mensaje</button>
             </form>
         </div>
     </section>
@@ -61,45 +61,38 @@
         <p>&copy; 2026 Desarrollado con Python & Flask.</p>
     </footer>
 
-    <!-- SDK de EmailJS -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("p2lAM5xhk2VBBGg3o");
-   })();
-</script>
+    <!-- SDK de EmailJS e Inicialización -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("p2lAM5xhk2VBBGg3o");
+        })();
+    </script>
 
-<!-- Cargar EmailJS SDK e inicializar -->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("p2lAM5xhk2VBBGg3o");
-   })();
-</script>
-<script>
-   const contactForm = document.getElementById('contact-form');
-   if (contactForm) {
-      contactForm.addEventListener('submit', function(event) {
-         event.preventDefault();
+    <!-- Script para enviar el formulario con EmailJS -->
+    <script>
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
 
-         // Cambiar texto del botón a "Enviando..."
-         const submitBtn = contactForm.querySelector('button[type="submit"]');
-         const originalText = submitBtn ? submitBtn.innerText : '';
-         if (submitBtn) submitBtn.innerText = 'Enviando...';
+                // Cambiar texto del botón a "Enviando..."
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn ? submitBtn.innerText : '';
+                if (submitBtn) submitBtn.innerText = 'Enviando...';
 
-         emailjs.sendForm('service_sxsduh8', 'template_yetggui', this)
-            .then(function() {
-               alert('¡Mensaje enviado con éxito! Te responderé pronto.');
-               contactForm.reset();
-               if (submitBtn) submitBtn.innerText = originalText;
-            }, function(error) {
-               alert('Ocurrió un error al enviar el mensaje. Intenta de nuevo.');
-               console.error('EmailJS Error:', error);
-               if (submitBtn) submitBtn.innerText = originalText;
+                emailjs.sendForm('service_sxsduh8', 'template_yetggui', this)
+                    .then(function() {
+                        alert('¡Mensaje enviado con éxito! Te responderé pronto.');
+                        contactForm.reset();
+                        if (submitBtn) submitBtn.innerText = originalText;
+                    }, function(error) {
+                        alert('Ocurrió un error al enviar el mensaje. Intenta de nuevo.');
+                        console.error('EmailJS Error:', error);
+                        if (submitBtn) submitBtn.innerText = originalText;
+                    });
             });
-      });
-   }
-</script>
-
+        }
+    </script>
 </body>
 </html>
